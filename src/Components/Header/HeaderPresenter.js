@@ -44,6 +44,16 @@ const Number = styled.span`
   top: -10px;
 `
 
+const getUnseen = notifications => {
+  let unseen = []
+  Object.keys(notifications).map(i => {
+    if (!notifications[i].seen) {
+      unseen.push(notifications)
+    }
+  })
+  return unseen.length
+}
+
 const HeaderPresenter = () => (
   <Header>
     <Flex alignCener full column>
@@ -61,7 +71,7 @@ const HeaderPresenter = () => (
           <HeaderIcon>
             <FontAwesome name="bell" />
             <Number>
-              {/* <Store.Consumer>{store => getUnseen(store.notifications)}</Store.Consumer> */}
+              <Store.Consumer>{store => getUnseen(store.notifications)}</Store.Consumer>
             </Number>
           </HeaderIcon>
         </Flex>
