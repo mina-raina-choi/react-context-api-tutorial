@@ -58,13 +58,13 @@ const NotificationPresenter = ({ id, text, seen }) => (
        AppContainer -> AppPresenter -> NotificationContainer -> NotificationPresenter를 거쳐서
       text를 props로 받아서 보여줌 */}
       <Title>
-        {/* {text} */}
+        {text}
 
         {/* 
         하지만, context api를 이용하면 AppContainer에서 Store.Provider에 넣은 value를
         Store.Consumer를 통해 NotificationPresenter 컴포넌트에서 바로 받아쓸 수 있다.
         */}
-        <Store.Consumer>{store => store.message}</Store.Consumer>
+        {/* <Store.Consumer>{store => store.message}</Store.Consumer> */}
       </Title>
       <FlexItem>
         <Fragment>

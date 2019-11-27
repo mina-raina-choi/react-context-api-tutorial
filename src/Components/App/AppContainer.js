@@ -3,18 +3,29 @@ import AppPresenter from "./AppPresenter"
 import Store from "store"
 
 class AppContainer extends Component {
-  state = {
-    message: "Hello",
-    stuff: 10,
-    isLoggedIn: false
-  }
-
   constructor(props) {
     super(props)
 
     this.state = {
       message: "Hello",
-      changeMessage: this.changeMessage
+      changeMessage: this.changeMessage,
+      notifications: {
+        "1": {
+          id: 1,
+          text: "Something",
+          seen: false
+        },
+        "2": {
+          id: 2,
+          text: "Something else",
+          seen: false
+        },
+        "3": {
+          id: 3,
+          text: "Something else but different",
+          seen: false
+        }
+      }
     }
   }
 

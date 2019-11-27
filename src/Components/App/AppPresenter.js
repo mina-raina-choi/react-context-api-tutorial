@@ -8,7 +8,18 @@ const AppPresenter = () => (
   <Fragment>
     <Header />
     <Flex alignCener full column>
-      <Notification />
+      <Store.Consumer>
+        {store => {
+          return Object.keys(store.notifications).map(key => (
+            <Notification
+              key={store.notifications[key].id}
+              id={store.notifications[key].id}
+              text={store.notifications[key].text}
+              seen={store.notifications[key].seen}
+            />
+          ))
+        }}
+      </Store.Consumer>
     </Flex>
   </Fragment>
 )
