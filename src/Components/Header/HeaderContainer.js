@@ -2,8 +2,10 @@ import React, { Component } from "react"
 import HeaderPresenter from "./HeaderPresenter"
 
 class HeaderContainer extends Component {
+  static propTypes = {}
+  state = {}
   render() {
-    return <div></div>
+    return <HeaderPresenter {...this.state} />
   }
 }
 

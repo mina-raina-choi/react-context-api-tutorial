@@ -9,19 +9,40 @@ class AppContainer extends Component {
     isLoggedIn: false
   }
 
-  componentDidMount() {
-    // message값을 바꾸면 NotificationPresenter 컴포넌트에도 바로 적용이 되는지 체크
+  constructor(props) {
+    super(props)
 
-    /* 
-    리덕스를 사용해서 상태값 관리및 공유를 하는 것보다 훨씬 간편하다   
-    */
+    this.state = {
+      message: "Hello",
+      changeMessage: this.changeMessage
+    }
+  }
 
-    setTimeout(() => {
+  changeMessage = () => {
+    if (this.state.message === "Hello") {
       this.setState({
         message: "Bye"
       })
-    }, 1000)
+    } else {
+      this.setState({
+        message: "Hello"
+      })
+    }
   }
+
+  // componentDidMount() {
+  //   // message값을 바꾸면 NotificationPresenter 컴포넌트에도 바로 적용이 되는지 체크
+
+  //   /*
+  //   리덕스를 사용해서 상태값 관리및 공유를 하는 것보다 훨씬 간편하다
+  //   */
+
+  //   setTimeout(() => {
+  //     this.setState({
+  //       message: "Bye"
+  //     })
+  //   }, 1000)
+  // }
 
   render() {
     return (

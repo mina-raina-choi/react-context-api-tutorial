@@ -1,11 +1,15 @@
 import React, { Fragment } from "react"
+import Header from "Components/Header"
 import Flex from "styled-flex-component"
-import NotificationContainer from "Components/Notification/NotificationContainer"
+import Notification from "Components/Notification"
+import Store from "store"
 
 const AppPresenter = () => (
   <Fragment>
-    <Flex alignCener full column></Flex>
-    <NotificationContainer />
+    <Header />
+    <Flex alignCener full column>
+      <Notification />
+    </Flex>
   </Fragment>
 )
 
