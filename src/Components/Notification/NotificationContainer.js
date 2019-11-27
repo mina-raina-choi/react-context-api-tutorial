@@ -2,8 +2,10 @@ import React, { Component } from "react"
 import NotificationPresenter from "./NotificationPresenter"
 
 class NotificationContainer extends Component {
+  static propTypes = {}
+  state = {}
   render() {
-    return <div></div>
+    return <NotificationPresenter {...this.props} {...this.state} />
   }
 }
 
