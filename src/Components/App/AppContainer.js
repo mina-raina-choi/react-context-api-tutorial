@@ -25,8 +25,32 @@ class AppContainer extends Component {
           text: "Something else but different",
           seen: false
         }
-      }
+      },
+      deleteNotification: this.deleteNotification,
+      seeNotification: this.seeNotification
     }
+  }
+
+  deleteNotification = id => {
+    this.setState(currState => {
+      const newState = delete currState.notifications[id]
+      return newState
+    })
+  }
+
+  seeNotification = id => {
+    this.setState(currState => {
+      return {
+        ...currState,
+        notifications: {
+          ...currState.notifications,
+          [id]: {
+            ...currState.notifications[id],
+            seen: true
+          }
+        }
+      }
+    })
   }
 
   changeMessage = () => {
